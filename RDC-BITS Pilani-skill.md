@@ -49,13 +49,13 @@ This JSON block defines the structural memory of the Antigravity skill, containi
         "current_plant": "Veerasandra Plant, Bangalore"
       },
       "user_selections": {
-        "q1": "A",
-        "q2": "A",
+        "q1": "B",
+        "q2": "C",
         "q3": "A",
-        "q4": "A",
-        "q5": "B",
-        "q6": "A",
-        "q7": "A",
+        "q4": "C",
+        "q5": "A",
+        "q6": "B",
+        "q7": "B",
         "q8": "C",
         "q9": "C",
         "q10": "B"
@@ -70,8 +70,8 @@ This JSON block defines the structural memory of the Antigravity skill, containi
         "dissonance": "CRITICAL DISSONANCE DETECTED (Q9 vs Q3, Q10, Q2): Suresh aspires to be a Plant Manager (Q9 = GC) but is unwilling to invest personal free time for study (Q3 = SO), rejects the stable 4-year retention program in favor of quick lateral salary hops (Q2 = SO), and demands that the company first reduce his floor targets before he attempts to learn (Q10 = SQ). This reveals corporate posturing; he wants the status of leadership but rejects the daily personal sacrifice and accountability that defines an actual RDC Plant Incharge.",
         "verdict": "DO NOT ENROLL (NOT READY)",
         "counseling": {
-          "accountability_challenge": "Suresh, you state that you want the authority and status of a Plant Manager, yet you refuse to invest a single hour of your personal free time to study and demand that RDC lower your site KPIs before you even attempt to prove your capabilities. In the real world of concrete operations, leadership means rising to meet the pressure, not demanding that the environment shrink to fit your comfort zone. If you cannot hold yourself accountable to a structured academic program designed to elevate you, how can RDC trust you to lead a plant crew through high-stakes operational crises?",
-          "persuasive_reframe": "Suresh, let's be absolutely clear: the next four years are going to pass anyway, whether you spend them stagnating in your current role or building a massive professional shield. This BITS Pilani program is a fully subsidized, zero-risk investment in your future that guarantees you graduate debt-free with a world-class engineering degree. Under academic pressure, you won't be left to drown; you have an active network of 17 senior RDC officers in the same program ready to lift you up. This is your shield against career obsolescence—don't let short-term convenience blind you to a lifetime of operational leverage."
+          "accountability_challenge": "Suresh, we see your strong desire to step into leadership as a Plant Manager and appreciate your ambition to grow within RDC Concrete. However, transitioning from operational execution to running a batching plant requires a profound shift in mindset—it means stepping forward to meet pressure rather than asking the organization to reduce your targets first. True leadership is built on taking active accountability for your own development, even when it requires temporary personal sacrifices like dedicating free time to study. If you truly wish to lead a plant crew in the future, we challenge you to start proving that capability now by embracing this upskilling opportunity.",
+          "persuasive_reframe": "Suresh, it is completely natural to feel hesitant about committing to a four-year BTech program, especially when you are already managing demanding operational targets. We want you to see this company-sponsored BITS Pilani degree not as an academic restriction on your time, but as a fully funded, zero-risk professional shield that future-proofs your career. The next four years are going to pass regardless of your choice; you can either spend them in your current comfort zone or emerge with a prestigious, debt-free engineering qualification. You will not be navigating this rigorous path alone—you have the active support of 17 senior RDC colleagues already in the program who will guide you every step of the way."
         }
       }
     },
@@ -83,14 +83,14 @@ This JSON block defines the structural memory of the Antigravity skill, containi
         "current_plant": "Navi Mumbai Main Plant"
       },
       "user_selections": {
-        "q1": "B",
+        "q1": "A",
         "q2": "B",
-        "q3": "B",
-        "q4": "B",
-        "q5": "A",
+        "q3": "C",
+        "q4": "A",
+        "q5": "B",
         "q6": "C",
-        "q7": "B",
-        "q8": "A",
+        "q7": "A",
+        "q8": "B",
         "q9": "C",
         "q10": "A"
       },
@@ -104,8 +104,8 @@ This JSON block defines the structural memory of the Antigravity skill, containi
         "dissonance": "NO DISSONANCE DETECTED: Amit's career ambitions (Q9 = GC) are fully matched by his ground-level choices. He is ready to invest personal time and balance site KPIs alongside BITS examinations (Q3 = GC), master the data/software tools that will modernize our concrete quality tracking (Q6 = GC), and tackle emergency plant failures proactively (Q8 = GC).",
         "verdict": "EMPHATIC ENROLL",
         "counseling": {
-          "accountability_challenge": "Amit, your profile displays an exceptional level of accountability and absolute alignment between your career ambitions and your ground-level discipline. The challenge for you now is to guard against complacency and prove that this grit is sustainable over a grueling four-year BITS Pilani journey. The organization is ready to back you fully, but you must constantly hold a mirror to your own limits, push past your comfort zones, and demonstrate the relentless operational stamina required of a future Technical Leader.",
-          "persuasive_reframe": "Amit, this BITS Pilani degree is not a burden or an academic chore; it is a premium, fully subsidized professional shield that RDC is placing in your hands to secure your long-term career growth. The 4-year commitment is your zero-risk launchpad to transitioning from a floor technician into a strategic manager, and the time will fly by while you accumulate invaluable capability. By leveraging the deep internal Rishtey of our 17 active senior colleagues already in the program, you will have a ready-made support system to ensure you never sink under academic pressure. Embrace this shield, lead the digital shift in concrete operations, and claim your place as a pillar of RDC's future."
+          "accountability_challenge": "Amit, your survey reveals a remarkable level of professional accountability and complete alignment with our goal of elevating you into future technical leadership. We highly value your deep drive and readiness to assume site-level ownership and drive digital concrete quality initiatives. The main path forward for you is to sustain this exceptional operational grit throughout the BITS Pilani program. RDC is ready to back you fully, and we challenge you to step into this opportunity, continue pushing past your comfort zones, and set a stellar upskilling benchmark for the entire QC team.",
+          "persuasive_reframe": "Amit, while the prospect of balancing intensive study with active QC lab targets is a demanding commitment, we want you to view this BITS BTech as a powerful, company-sponsored professional shield for your career. This is a zero-risk, fully subsidized launchpad that will transition you from a technician to a highly certified strategic manager over the next four years. Time will pass quickly as you accumulate top-tier technical and managerial capabilities. By drawing strength and coordination from the 17 senior RDC officers currently in the program, you will have a resilient support network to ensure you perform at your peak without letting site standards slip."
         }
       }
     },
@@ -117,14 +117,14 @@ This JSON block defines the structural memory of the Antigravity skill, containi
         "current_plant": "Nagpur Plant"
       },
       "user_selections": {
-        "q1": "B",
+        "q1": "A",
         "q2": "B",
-        "q3": "C",
-        "q4": "B",
-        "q5": "A",
+        "q3": "B",
+        "q4": "A",
+        "q5": "B",
         "q6": "C",
-        "q7": "B",
-        "q8": "A",
+        "q7": "A",
+        "q8": "B",
         "q9": "C",
         "q10": "C"
       },
@@ -138,8 +138,8 @@ This JSON block defines the structural memory of the Antigravity skill, containi
         "dissonance": "MINOR SITUATIONAL ANXIETY (Q9 vs Q3, Q10): Vikram has a solid GC profile, but indicates hesitation on balancing site targets with studies without letting performance slip (Q3 = SQ) and leans toward daily on-the-job experience over academic constraints (Q10 = SO). Unlike pure posturing, this represents practical anxiety from a dedicated floor technician who does not want to fail his operational duties.",
         "verdict": "CONDITIONAL ENROLL",
         "counseling": {
-          "accountability_challenge": "Vikram, you have built a stellar reputation on the floor and aspire to step up to a Plant Manager level, yet your hesitation to balance site targets with academic rigor suggests a subtle avoidance of the mental stretch required for high-altitude leadership. True operational ownership means finding a way to make your study commitments work alongside plant KPIs, not allowing anxiety to cap your potential. It is time to stop posturing behind floor-level excuses and prove that you have the managerial capacity to lead under pressure.",
-          "persuasive_reframe": "Vikram, your fear of letting concrete delivery targets slip during exams is a highly addressable concern, not a reason to reject a premium, fully subsidized BITS Pilani degree. Think of this 4-year commitment not as a restriction on your time, but as a zero-risk professional shield that protects your future career from stagnation while the company covers all costs. Since our 17 active senior officers are already successfully navigating this exact program, you can directly leverage their shared experience and site coordination strategies so that you never sink under academic load. The time will pass regardless; you want to emerge as a certified BTech operational leader or remain exactly where you are today."
+          "accountability_challenge": "Vikram, you have built a fantastic reputation in Nagpur operations, and we strongly believe in your potential to transition into a Plant Manager role. However, stepping into ultimate plant leadership means learning to balance critical on-the-floor delivery targets with the mental stretch of long-term capability building. Your natural hesitation about academic pressure is completely understandable, but operational ownership requires finding ways to integrate development into your weekly routine rather than letting floor stress cap your potential. We challenge you to rise above these immediate anxieties and demonstrate the true managerial capacity we know you possess.",
+          "persuasive_reframe": "Vikram, your worry about letting concrete delivery schedules clash with examinations shows your deep dedication to your daily operational duties, and we highly respect that. We want to assure you that this 4-year BITS Pilani program is a completely subsidized, zero-risk professional shield designed to elevate—not compromise—your career at RDC. The next four years will pass regardless of your choice; this is your chance to emerge as a certified BTech operational leader with no personal debt. You will not have to juggle this alone—our 17 active senior officers already in the program will serve as a close mentorship circle to help you coordinate schedules and succeed."
         }
       }
     }

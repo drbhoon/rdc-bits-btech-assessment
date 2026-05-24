@@ -47,8 +47,8 @@ submissions.set('mock_01_suresh', {
     current_plant: "Veerasandra Plant, Bangalore"
   },
   user_selections: {
-    q1: "A", q2: "A", q3: "A", q4: "A", q5: "B",
-    q6: "A", q7: "A", q8: "C", q9: "C", q10: "B"
+    q1: "B", q2: "C", q3: "A", q4: "C", q5: "A",
+    q6: "B", q7: "B", q8: "C", q9: "C", q10: "B"
   },
   score_tallies: { GC: 1, SO: 8, SQ: 1 },
   api_response: {
@@ -72,8 +72,8 @@ submissions.set('mock_02_amit', {
     current_plant: "Navi Mumbai Main Plant"
   },
   user_selections: {
-    q1: "B", q2: "B", q3: "B", q4: "B", q5: "A",
-    q6: "C", q7: "B", q8: "A", q9: "C", q10: "A"
+    q1: "A", q2: "B", q3: "C", q4: "A", q5: "B",
+    q6: "C", q7: "A", q8: "B", q9: "C", q10: "A"
   },
   score_tallies: { GC: 10, SO: 0, SQ: 0 },
   api_response: {
@@ -97,8 +97,8 @@ submissions.set('mock_03_vikram', {
     current_plant: "Nagpur Plant"
   },
   user_selections: {
-    q1: "B", q2: "B", q3: "C", q4: "B", q5: "A",
-    q6: "C", q7: "B", q8: "A", q9: "C", q10: "C"
+    q1: "A", q2: "B", q3: "B", q4: "A", q5: "B",
+    q6: "C", q7: "A", q8: "B", q9: "C", q10: "C"
   },
   score_tallies: { GC: 8, SO: 1, SQ: 1 },
   api_response: {

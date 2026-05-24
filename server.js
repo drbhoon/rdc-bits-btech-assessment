@@ -243,9 +243,28 @@ app.post('/api/submit', async (req, res) => {
   // 3. Fallback evaluation logic if Gemini is unconfigured or fails
   if (!api_response) {
     console.log("Executing psychometric rules engine fallback...");
+    
+    // Dynamic tag lookup helper to support robust option shuffling
+    const getTagForQuestion = (qId, optionId) => {
+      if (!questionBank || !questionBank.questions) return null;
+      const question = questionBank.questions.find(q => q.id === qId);
+      if (question) {
+        const option = question.options.find(opt => opt.id === optionId);
+        if (option) return option.tag;
+      }
+      return null;
+    };
+
     const isGC = score_tallies.GC >= 7;
     const isSO = score_tallies.SO >= 5;
-    const hasDissonance = user_selections.q9 === 'C' && (user_selections.q3 === 'A' || user_selections.q10 === 'B' || user_selections.q2 === 'A');
+    
+    // Evaluate cognitive dissonance dynamically based on tags rather than hardcoded letters
+    const q9Tag = getTagForQuestion('q9', user_selections.q9);
+    const q3Tag = getTagForQuestion('q3', user_selections.q3);
+    const q10Tag = getTagForQuestion('q10', user_selections.q10);
+    const q2Tag = getTagForQuestion('q2', user_selections.q2);
+
+    const hasDissonance = q9Tag === 'GC' && (q3Tag === 'SO' || q10Tag === 'SQ' || q2Tag === 'SO');
 
     let verdict = "CONDITIONAL ENROLL";
     let diagnosis = `${employee_metadata.name} displays a mix of growth drive and operational reservations. They appreciate the long-term BTech asset but worry about current site KPIs and exam loads.`;

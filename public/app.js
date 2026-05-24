@@ -391,3 +391,21 @@ async function handleAdminLogin(event) {
     errorMsg.classList.remove('hidden');
   }
 }
+
+// --- EXPORT / PDF DOWNLOAD CONTROLLERS ---
+
+function downloadReportPDF() {
+  const sub = submissions.find(s => s.id === selectedSubmissionId);
+  if (!sub) return;
+  
+  // Update browser title dynamically so that when saved as PDF, the filename matches the candidate
+  const originalTitle = document.title;
+  const safeName = sub.employee_metadata.name.trim().replace(/[^a-zA-Z0-9]/g, '_');
+  document.title = `RDC_BITS_BTech_Readiness_Report_${safeName}`;
+  
+  // Trigger system Print dialog
+  window.print();
+  
+  // Restore original browser title
+  document.title = originalTitle;
+}

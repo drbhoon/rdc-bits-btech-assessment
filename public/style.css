@@ -962,3 +962,129 @@ select option {
   25% { transform: translateX(-4px); }
   75% { transform: translateX(4px); }
 }
+
+/* --- PRINT STYLE SYSTEM OVERRIDES --- */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .glass-bg,
+  .app-header,
+  .roster-panel,
+  .empty-state,
+  .download-btn,
+  .admin-login-link-container,
+  .modal-overlay {
+    display: none !important;
+  }
+  
+  .app-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .admin-grid {
+    display: block !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+  
+  .report-panel {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  .report-container {
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  #rep-name {
+    color: #000000 !important;
+    font-size: 28px !important;
+  }
+  
+  .report-tag {
+    background: #f0f0f0 !important;
+    border: 1px solid #ccc !important;
+    color: #333 !important;
+  }
+  
+  .verdict-badge {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    border-radius: 4px !important;
+    background: transparent !important;
+    font-weight: 700 !important;
+  }
+  
+  .verdict-emphatic { border: 2px solid #10b981 !important; color: #10b981 !important; }
+  .verdict-conditional { border: 2px solid #f59e0b !important; color: #f59e0b !important; }
+  .verdict-dne { border: 2px solid #ef4444 !important; color: #ef4444 !important; }
+  
+  .section-title {
+    color: #000000 !important;
+    border-bottom: 2px solid #eee !important;
+    padding-bottom: 6px !important;
+    font-size: 16px !important;
+    margin-top: 30px !important;
+  }
+  
+  .bar-header {
+    color: #333 !important;
+  }
+  
+  .bar-value {
+    color: #000 !important;
+  }
+  
+  .bar-track {
+    background: #f0f0f0 !important;
+    border: 1px solid #ddd !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .bar-fill {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .gc-bg { background-color: #10b981 !important; }
+  .so-bg { background-color: #ef4444 !important; }
+  .sq-bg { background-color: #f59e0b !important; }
+  
+  .card-quote {
+    background: #f9f9f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 4px solid #1e40af !important;
+    color: #333 !important;
+  }
+  
+  .dissonance-card {
+    border-left-color: #ef4444 !important;
+    background: #fff5f5 !important;
+  }
+  
+  .script-item {
+    background: #f9f9f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    page-break-inside: avoid !important;
+  }
+  
+  .script-num {
+    color: #1e40af !important;
+  }
+  
+  .script-text {
+    color: #111 !important;
+  }
+}

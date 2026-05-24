@@ -217,13 +217,13 @@ Displays the psychometric assessment of the active or selected candidate in a hi
 
 ---
 
-### 🗣️ DYNAMIC MOTIVATIONAL COUNSELING ENGINES
-*(AI Counseling Interventions Profile — Direct ready-to-deliver coaching advice)*
+### 🗣️ Expert Advice
+*(Constructive coaching advice and career reframing tailored for you by our Industrial Psychologist)*
 
-#### A) THE ACCOUNTABILITY CHALLENGE (Confronting the Posturing)
+#### A) THE PATH TO GROWTH (Empathetic Accountability)
 > `state.api_response.counseling.accountability_challenge`
 
-#### B) THE PERSUASIVE REFRAME (Motivating them to Enroll)
+#### B) THE BITS SHIELD (Empathetic Reframe)
 > `state.api_response.counseling.persuasive_reframe`
 ```
 

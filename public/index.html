@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RDC Concrete — BITS Pilani BTech Readiness Diagnostics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glass-bg"></div>
+  
+  <header class="app-header">
+    <div class="logo-area">
+      <span class="brand-company">RDC Concrete</span>
+      <span class="brand-separator">|</span>
+      <span class="brand-program">BITS Pilani BTech Readiness</span>
+    </div>
+    <nav class="app-nav">
+      <button id="nav-candidate" class="nav-btn active" onclick="switchView('candidate')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Take Survey
+      </button>
+      <button id="nav-admin" class="nav-btn" onclick="switchView('admin')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+        Leadership Dashboard
+      </button>
+    </nav>
+  </header>
+
+  <main class="app-content">
+    
+    <!-- CANDIDATE VIEW -->
+    <section id="view-candidate" class="view-section active">
+      
+      <!-- ONBOARDING FORM -->
+      <div id="candidate-onboarding" class="glass-card fade-in">
+        <div class="card-header text-center">
+          <h1>BITS Pilani BTech Program</h1>
+          <p class="subtitle">Candidate Operational & Psychometric Readiness Survey</p>
+          <div class="divider"></div>
+        </div>
+        <div class="card-body">
+          <p class="intro-text">
+            RDC Concrete is sponsoring eligible engineering diploma holders in Operations and Quality Control (QC) for a premium, debt-free BTech degree from BITS Pilani. This survey evaluates your operational readiness, time-management outlook, and long-term alignment for future plant leadership.
+          </p>
+          <form id="onboarding-form" onsubmit="startSurvey(event)">
+            <div class="form-group">
+              <label for="candidate-name">Full Name</label>
+              <input type="text" id="candidate-name" required placeholder="e.g. Rajesh Sharma" autocomplete="off">
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="candidate-dept">Primary Function</label>
+                <select id="candidate-dept" required>
+                  <option value="" disabled selected>Select function...</option>
+                  <option value="Operations">Operations / Plant Management</option>
+                  <option value="Quality Control">Quality Control (QC)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="candidate-plant">Current Plant Location</label>
+                <input type="text" id="candidate-plant" required placeholder="e.g. Veerasandra Plant, Bangalore" autocomplete="off">
+              </div>
+            </div>
+            <button type="submit" class="primary-btn">
+              Begin Assessment
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- SURVEY WIZARD -->
+      <div id="survey-wizard" class="glass-card hidden">
+        <div class="wizard-header">
+          <div class="progress-container">
+            <span class="progress-text" id="wizard-progress-text">Question 1 of 10</span>
+            <div class="progress-bar">
+              <div class="progress-fill" id="wizard-progress-fill" style="width: 10%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="wizard-body">
+          <div class="question-container fade-in" id="question-card">
+            <span class="question-badge" id="question-badge">Scenario 1</span>
+            <h2 class="question-scenario" id="question-scenario">Question loading...</h2>
+            <div class="options-list" id="options-list">
+              <!-- Options loaded dynamically -->
+            </div>
+          </div>
+        </div>
+        <div class="wizard-footer">
+          <button id="wizard-prev-btn" class="secondary-btn" onclick="prevQuestion()" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Previous
+          </button>
+          <button id="wizard-next-btn" class="primary-btn" onclick="nextQuestion()" disabled>
+            Next
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- COMPLETION SCREEN -->
+      <div id="survey-complete" class="glass-card text-center hidden fade-in">
+        <div class="success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="card-header">
+          <h1>Survey Completed!</h1>
+          <p class="subtitle">Your diagnostics have been securely saved</p>
+          <div class="divider"></div>
+        </div>
+        <div class="card-body">
+          <p class="intro-text">
+            Thank you for taking the BITS Pilani readiness assessment. Your answers have been tallied and sent to the dynamic Industrial Psychologist evaluation module for psychological analysis.
+          </p>
+          <p class="instructions-text">
+            RDC Concrete leadership will review your psychometric profile and schedule a 1-on-1 counseling session tomorrow.
+          </p>
+          <button class="primary-btn margin-auto" onclick="resetCandidatePortal()">
+            Submit Another Response
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ADMIN VIEW -->
+    <section id="view-admin" class="view-section">
+      
+      <!-- DASHBOARD WRAPPER -->
+      <div class="admin-grid">
+        
+        <!-- LEFT PANEL: ROSTER -->
+        <div class="roster-panel glass-card">
+          <div class="panel-header">
+            <h2>Candidate Profiles</h2>
+            <p class="subtitle" id="roster-count">3 Submissions Loaded</p>
+            <div class="divider"></div>
+          </div>
+          <div class="roster-list" id="roster-list">
+            <!-- Roster items rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL: DETAILED REPORT -->
+        <div class="report-panel glass-card" id="report-panel">
+          <div class="empty-state" id="report-empty-state">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <h3>No Report Selected</h3>
+            <p>Select a candidate from the roster list on the left to load their executive psychometric readiness report.</p>
+          </div>
+          
+          <div class="report-container hidden" id="report-container">
+            <div class="report-header">
+              <div class="header-meta">
+                <span class="report-tag" id="rep-dept">Quality Control</span>
+                <h1 id="rep-name">Amit Ray</h1>
+                <p class="plant" id="rep-plant">Navi Mumbai Main Plant</p>
+              </div>
+              <div class="header-verdict">
+                <span class="verdict-badge" id="rep-verdict">EMPHATIC ENROLL</span>
+              </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <!-- SCORES & ARCHETYPES -->
+            <div class="report-section">
+              <h3 class="section-title">📊 Archetype Profile Analysis</h3>
+              <div class="archetype-bars">
+                
+                <div class="bar-group">
+                  <div class="bar-header">
+                    <span class="bar-name">Growth Catalyst (GC)</span>
+                    <span class="bar-value" id="bar-val-gc">10 / 10</span>
+                  </div>
+                  <div class="bar-track">
+                    <div class="bar-fill gc-bg" id="bar-fill-gc" style="width: 100%;"></div>
+                  </div>
+                  <p class="bar-desc">High accountability, long-term asset focus, comfortable with tech/AI shift.</p>
+                </div>
+
+                <div class="bar-group">
+                  <div class="bar-header">
+                    <span class="bar-name">Short-Term Optimizer (SO)</span>
+                    <span class="bar-value" id="bar-val-so">0 / 10</span>
+                  </div>
+                  <div class="bar-track">
+                    <div class="bar-fill so-bg" id="bar-fill-so" style="width: 0%;"></div>
+                  </div>
+                  <p class="bar-desc">Prioritizes immediate increments, comfort zones, and easy workload bounds.</p>
+                </div>
+
+                <div class="bar-group">
+                  <div class="bar-header">
+                    <span class="bar-name">Status-Quo Complacent (SQ)</span>
+                    <span class="bar-value" id="bar-val-sq">0 / 10</span>
+                  </div>
+                  <div class="bar-track">
+                    <div class="bar-fill sq-bg" id="bar-fill-sq" style="width: 0%;"></div>
+                  </div>
+                  <p class="bar-desc">Low risk tolerance, reactive floor habits, expects environment to adjust for them.</p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- CORE DIAGNOSIS -->
+            <div class="report-section">
+              <h3 class="section-title">🧠 Core Psychological Diagnosis</h3>
+              <div class="card-quote">
+                <p id="rep-diagnosis">Amit is an outstanding Growth Catalyst...</p>
+              </div>
+            </div>
+
+            <!-- COGNITIVE DISSONANCE -->
+            <div class="report-section">
+              <h3 class="section-title">🔍 Cognitive Dissonance & Blind Spots</h3>
+              <div class="card-quote dissonance-card">
+                <p id="rep-dissonance">No dissonance detected...</p>
+              </div>
+            </div>
+
+            <!-- COUNSELING SCRIPT -->
+            <div class="report-section">
+              <h3 class="section-title">🗣️ Tailored Counseling Script For Leadership</h3>
+              <p class="section-intro">Use these 3 targeted questions during tomorrow's 1-on-1 meeting to cut through defensive corporate posturing and test their true drive:</p>
+              <div class="script-list" id="rep-script-list">
+                <!-- script points loaded dynamically -->
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+  
+  <script src="app.js"></script>
+</body>
+</html>

@@ -44,6 +44,19 @@ Use the following classification system to determine the final verdict:
 
 ---
 
+# DYNAMIC MOTIVATIONAL COUNSELING ENGINES (AI Counseling Interventions)
+Instead of providing questions or scripts for an interviewer, you must generate direct, high-impact ready-to-deliver counseling blocks aimed directly at the candidate to motivate them and break their resistance using a "tough love" coaching approach. While the psychological diagnosis must remain completely authentic, objective, and candid, the counseling advice MUST have a strategic bias toward motivating the candidate to join the program.
+
+Structure this section into two distinct, ready-to-deliver counseling blocks in the output JSON:
+
+A) THE ACCOUNTABILITY CHALLENGE (Confronting the Posturing)
+Provide a 3-4 sentence message directed straight at the employee's blind spots. Address them directly by their name. It must firmly hold a mirror to their cognitive dissonance (e.g., wanting a promotion but dodging the effort) and challenge them to prove their potential.
+
+B) THE PERSUASIVE REFRAME (Motivating them to Enroll)
+Provide a highly persuasive, 3-4 sentence motivational argument specifically tailored to dismantle their primary hesitation (Time/KPIs/Exam fear). Reframe the 4-year commitment not as a restriction, but as a heavily subsidized, zero-risk professional shield. Remind them that time will pass anyway, and explain how leveraging internal Rishtey (the 17 active seniors) will prevent them from sinking under academic pressure.
+
+---
+
 # OUTPUT JSON FORMAT
 Your response must be returned strictly in the following JSON format. Do not include markdown wrap, trailing commas, or conversational introduction text. Return only the raw JSON structure:
 
@@ -53,11 +66,10 @@ Your response must be returned strictly in the following JSON format. Do not inc
     "diagnosis": "A sharp, 3-to-4 sentence behavioral summary detailing how this candidate calculates immediate personal sacrifices versus long-term professional asset building.",
     "dissonance": "A detailed analysis of structural contradictions in their choices. Call out the exact questions (e.g., Q9 vs Q3) and explain the gap between stated career goals and ground-level willingness to stretch.",
     "verdict": "Exactly one of: 'EMPHATIC ENROLL' | 'CONDITIONAL ENROLL' | 'DO NOT ENROLL (NOT READY)'",
-    "talking_points": [
-      "Targeted, firm psychological question/talking point 1 for Chief of Operations / HR during the 1-on-1 meeting tomorrow to cut through defensive corporate posturing.",
-      "Targeted, firm psychological question/talking point 2.",
-      "Targeted, firm psychological question/talking point 3."
-    ]
+    "counseling": {
+      "accountability_challenge": "A direct, 3-4 sentence tough-love accountability message confronting their posturing and blind spots by name.",
+      "persuasive_reframe": "A direct, 3-4 sentence persuasive reframe argument motivating them to enroll by reframing the BITS degree, leveraging Rishtey, and addressing their primary hesitation."
+    }
   }
 }
 ```

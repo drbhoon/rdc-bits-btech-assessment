@@ -811,31 +811,35 @@ select option {
   background: rgba(239, 68, 68, 0.02);
 }
 
-.script-list {
+.counseling-block-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
-.script-item {
+.counseling-block {
   display: flex;
-  gap: 14px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--card-border);
-  padding: 18px 20px;
-  border-radius: var(--border-radius-md);
+  flex-direction: column;
+  gap: 10px;
 }
 
-.script-num {
-  font-weight: 800;
+.counseling-block-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 13px;
   color: var(--color-cobalt);
-  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.script-text {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--text-primary);
+.accountability-card {
+  border-left-color: var(--color-rose) !important;
+  background: rgba(239, 68, 68, 0.02) !important;
+}
+
+.reframe-card {
+  border-left-color: var(--color-emerald) !important;
+  background: rgba(16, 185, 129, 0.02) !important;
 }
 
 /* --- FADE EFFECTS --- */
@@ -1074,17 +1078,22 @@ select option {
     background: #fff5f5 !important;
   }
   
-  .script-item {
-    background: #f9f9f9 !important;
-    border: 1px solid #e2e8f0 !important;
+  .counseling-block-title {
+    color: #1e40af !important;
+    margin-top: 15px !important;
+  }
+  
+  .accountability-card {
+    border-left: 4px solid #ef4444 !important;
+    background: #fff5f5 !important;
+    color: #111 !important;
     page-break-inside: avoid !important;
   }
   
-  .script-num {
-    color: #1e40af !important;
-  }
-  
-  .script-text {
+  .reframe-card {
+    border-left: 4px solid #10b981 !important;
+    background: #f0fdf4 !important;
     color: #111 !important;
+    page-break-inside: avoid !important;
   }
 }

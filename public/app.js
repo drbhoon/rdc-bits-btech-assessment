@@ -333,19 +333,20 @@ function renderReport() {
     dissonanceCard.style.background = 'rgba(16, 185, 129, 0.02)';
   }
   
-  // Counseling Talking Points
-  const scriptList = document.getElementById('rep-script-list');
-  scriptList.innerHTML = '';
+  // Counseling Interventions
+  const counseling = sub.api_response.counseling || {};
+  const challengeText = counseling.accountability_challenge || 'No accountability challenge generated.';
+  const reframeText = counseling.persuasive_reframe || 'No persuasive reframe generated.';
   
-  sub.api_response.talking_points.forEach((point, idx) => {
-    const item = document.createElement('div');
-    item.className = 'script-item fade-in';
-    item.innerHTML = `
-      <div class="script-num">Q${idx + 1}</div>
-      <div class="script-text">${point}</div>
-    `;
-    scriptList.appendChild(item);
-  });
+  const challengeEl = document.getElementById('rep-accountability-challenge');
+  const reframeEl = document.getElementById('rep-persuasive-reframe');
+  
+  if (challengeEl) {
+    challengeEl.innerText = challengeText;
+  }
+  if (reframeEl) {
+    reframeEl.innerText = reframeText;
+  }
 }
 
 // --- ADMIN PASSWORD GATE CONTROLLERS ---

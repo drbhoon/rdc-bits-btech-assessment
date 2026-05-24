@@ -842,6 +842,18 @@ select option {
   background: rgba(16, 185, 129, 0.02) !important;
 }
 
+.delete-btn {
+  background: transparent;
+  border: 1px solid var(--color-rose);
+  color: var(--color-rose);
+}
+
+.delete-btn:hover {
+  background: var(--color-rose-glow) !important;
+  border-color: var(--color-rose) !important;
+  box-shadow: 0 0 15px var(--color-rose-glow);
+}
+
 /* --- FADE EFFECTS --- */
 .fade-in {
   animation: fadeIn 0.4s ease-out forwards;
@@ -979,6 +991,7 @@ select option {
   .roster-panel,
   .empty-state,
   .download-btn,
+  .delete-btn,
   .admin-login-link-container,
   .modal-overlay {
     display: none !important;

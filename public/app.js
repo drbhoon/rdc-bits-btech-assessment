@@ -410,3 +410,41 @@ function downloadReportPDF() {
   // Restore original browser title
   document.title = originalTitle;
 }
+
+// --- CANDIDATE DELETION CONTROLLER ---
+
+async function confirmDeleteCandidate() {
+  const sub = submissions.find(s => s.id === selectedSubmissionId);
+  if (!sub) return;
+
+  const candidateName = sub.employee_metadata.name;
+  
+  // Double-confirmation alert prompt
+  const confirmFirst = confirm(`Are you sure you want to permanently delete ${candidateName}'s readiness report?\n\nThis action cannot be undone.`);
+  if (!confirmFirst) return;
+
+  const confirmSecond = confirm(`WARNING: You are about to permanently delete the profile of "${candidateName}" from the RDC Concrete database.\n\nPress OK to finalize this deletion.`);
+  if (!confirmSecond) return;
+
+  try {
+    const response = await fetch(`/api/submissions/${selectedSubmissionId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${adminToken}`
+      }
+    });
+
+    if (response.ok) {
+      alert(`Candidate report for "${candidateName}" has been successfully deleted.`);
+      selectedSubmissionId = null;
+      await fetchSubmissions(); // Re-fetch submissions
+      renderReport(); // Clear active report view
+    } else {
+      const errData = await response.json();
+      alert(`Deletion failed: ${errData.error || 'Unauthorized'}`);
+    }
+  } catch (error) {
+    console.error("Deletion API error:", error);
+    alert("Error communicating with deletion API. Verify network or server status.");
+  }
+}

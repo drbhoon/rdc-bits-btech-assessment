@@ -175,6 +175,17 @@ app.get('/api/submissions/:id', checkAdminAuth, (req, res) => {
   res.json(sub);
 });
 
+// 3.5 Delete a candidate submission (Secured)
+app.delete('/api/submissions/:id', checkAdminAuth, (req, res) => {
+  const id = req.params.id;
+  if (!submissions.has(id)) {
+    return res.status(404).json({ error: "Submission not found" });
+  }
+  submissions.delete(id);
+  console.log(`Deleted candidate submission: ${id}`);
+  res.json({ success: true, message: `Submission ${id} deleted successfully.` });
+});
+
 // 4. Candidate submits survey responses & triggers Gemini evaluation
 app.post('/api/submit', async (req, res) => {
   const { employee_metadata, user_selections } = req.body;

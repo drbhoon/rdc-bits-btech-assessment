@@ -134,6 +134,19 @@ const calculateTallies = (userSelections) => {
   return tallies;
 };
 
+// Middleware to verify admin password
+const checkAdminAuth = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  const adminPassword = process.env.ADMIN_PASSWORD || 'admin123';
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const token = authHeader.substring(7);
+    if (token === adminPassword) {
+      return next();
+    }
+  }
+  res.status(401).json({ error: "Unauthorized access to diagnostics" });
+};
+
 // -- API ENDPOINTS --
 
 // 1. Fetch Question Bank
@@ -141,14 +154,25 @@ app.get('/api/questions', (req, res) => {
   res.json(questionBank);
 });
 
-// 2. Fetch all submissions
-app.get('/api/submissions', (req, res) => {
+// 1.5 Admin Authentication Route
+app.post('/api/admin/login', (req, res) => {
+  const { password } = req.body;
+  const adminPassword = process.env.ADMIN_PASSWORD || 'admin123';
+  if (password === adminPassword) {
+    res.json({ success: true, token: password });
+  } else {
+    res.status(401).json({ error: "Invalid password" });
+  }
+});
+
+// 2. Fetch all submissions (Secured)
+app.get('/api/submissions', checkAdminAuth, (req, res) => {
   const list = Array.from(submissions.values()).sort((a, b) => b.created_at - a.created_at);
   res.json(list);
 });
 
-// 3. Fetch single submission
-app.get('/api/submissions/:id', (req, res) => {
+// 3. Fetch single submission (Secured)
+app.get('/api/submissions/:id', checkAdminAuth, (req, res) => {
   const sub = submissions.get(req.params.id);
   if (!sub) return res.status(404).json({ error: "Submission not found" });
   res.json(sub);

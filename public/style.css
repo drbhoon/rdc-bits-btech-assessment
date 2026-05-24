@@ -891,3 +891,74 @@ select option {
     font-size: 24px;
   }
 }
+
+/* --- ADMIN PASSWORD GATE MODAL & STYLING --- */
+.admin-login-link-container {
+  margin-top: 24px;
+}
+
+.link-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.link-btn:hover {
+  color: var(--color-cobalt);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 15, 30, 0.7);
+  backdrop-filter: blur(24px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 30px !important;
+  background: hsla(223, 47%, 16%, 0.85) !important;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.error-msg {
+  background: var(--color-rose-glow);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--color-rose);
+  padding: 10px 14px;
+  border-radius: var(--border-radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}

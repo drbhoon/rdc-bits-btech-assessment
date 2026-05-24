@@ -6,11 +6,15 @@ let candidateSelections = {};
 let candidateMetadata = { name: '', department: '', current_plant: '' };
 let submissions = [];
 let selectedSubmissionId = null;
+let adminToken = localStorage.getItem('adminToken') || null;
 
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
   fetchQuestions();
-  fetchSubmissions();
+  if (adminToken) {
+    document.getElementById('nav-admin').classList.remove('hidden');
+    fetchSubmissions();
+  }
 });
 
 // --- SPA VIEW ROUTING ---
@@ -44,10 +48,20 @@ async function fetchQuestions() {
   }
 }
 
-// 2. Fetch submissions from the server
+// 2. Fetch submissions from the server (Secured)
 async function fetchSubmissions() {
+  if (!adminToken) return;
   try {
-    const response = await fetch('/api/submissions');
+    const response = await fetch('/api/submissions', {
+      headers: { 'Authorization': `Bearer ${adminToken}` }
+    });
+    if (response.status === 401) {
+      adminToken = null;
+      localStorage.removeItem('adminToken');
+      document.getElementById('nav-admin').classList.add('hidden');
+      switchView('candidate');
+      return;
+    }
     submissions = await response.json();
     renderRoster();
     console.log(`Fetched ${submissions.length} submissions successfully.`);
@@ -332,4 +346,48 @@ function renderReport() {
     `;
     scriptList.appendChild(item);
   });
+}
+
+// --- ADMIN PASSWORD GATE CONTROLLERS ---
+
+function showAdminLoginModal() {
+  document.getElementById('admin-login-modal').classList.remove('hidden');
+  document.getElementById('admin-password').focus();
+}
+
+function hideAdminLoginModal() {
+  document.getElementById('admin-login-modal').classList.add('hidden');
+  document.getElementById('admin-password').value = '';
+  document.getElementById('login-error-msg').classList.add('hidden');
+}
+
+async function handleAdminLogin(event) {
+  event.preventDefault();
+  const password = document.getElementById('admin-password').value;
+  const errorMsg = document.getElementById('login-error-msg');
+  
+  try {
+    const response = await fetch('/api/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password })
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      adminToken = data.token;
+      localStorage.setItem('adminToken', adminToken);
+      
+      // Reveal Admin View and Switch
+      document.getElementById('nav-admin').classList.remove('hidden');
+      hideAdminLoginModal();
+      switchView('admin');
+    } else {
+      errorMsg.classList.remove('hidden');
+    }
+  } catch (error) {
+    console.error("Admin Login Error:", error);
+    errorMsg.innerText = "Error connecting to server. Please try again.";
+    errorMsg.classList.remove('hidden');
+  }
 }

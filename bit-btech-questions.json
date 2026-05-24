@@ -1,0 +1,96 @@
+{
+  "assessment_id": "rdc_bits_btech_readiness",
+  "total_questions": 10,
+  "questions": [
+    {
+      "id": "q1",
+      "scenario": "When considering upgrading your qualifications from a diploma to a BTech degree, which path aligns best with your long-term career goals?",
+      "options": [
+        {"id": "A", "text": "I will pursue it privately from an easier university, paying out of my own salary, so I face an easy degree with no company retention commitment.", "tag": "SO"},
+        {"id": "B", "text": "I will leverage RDC’s sponsorship to earn a premium, globally recognized BTech from BITS Pilani completely debt-free, accepting the retention commitment as a launchpad.", "tag": "GC"},
+        {"id": "C", "text": "I haven't calculated the long-term career cost of choosing an easier, less recognized degree over a premium one.", "tag": "SQ"}
+      ]
+    },
+    {
+      "id": "q2",
+      "scenario": "When looking at the 4-year retention commitment required for the sponsored BTech program, what is your primary outlook?",
+      "options": [
+        {"id": "A", "text": "Four years is too long to stay in one company when I am young; I prefer the freedom to switch jobs for small, immediate salary increments, even if my qualification remains a diploma.", "tag": "SO"},
+        {"id": "B", "text": "Four years will pass anyway; I would rather spend this time anchored in a stable ecosystem, graduating with a premium BTech degree and a clear path toward a Plant or Technical Manager role.", "tag": "GC"},
+        {"id": "C", "text": "I am hesitant to commit because I haven't compared the risk of job-hunting in a volatile market against the stability of a company-backed engineering degree.", "tag": "SQ"}
+      ]
+    },
+    {
+      "id": "q3",
+      "scenario": "When you consider the academic rigor of BITS Pilani exams alongside your daily operational or QC responsibilities, how do you view the challenge?",
+      "options": [
+        {"id": "A", "text": "Even if the company allows off-time for classes, the ground reality is that my KPIs still have to be achieved. My personal free time will be completely gone, so it isn't worth the pressure.", "tag": "SO"},
+        {"id": "B", "text": "I know it will squeeze my free time and require managing both KPIs and classes, but I am ready to handle temporary strain to fundamentally upgrade my long-term career trajectory.", "tag": "GC"},
+        {"id": "C", "text": "I am hesitant because I am unsure how to balance site targets with academic requirements without letting my performance slip.", "tag": "SQ"}
+      ]
+    },
+    {
+      "id": "q4",
+      "scenario": "When managing a demanding site role in Operations or QC, which approach do you believe leads to a more secure career?",
+      "options": [
+        {"id": "A", "text": "Staying completely focused on my own plant’s metrics, KPIs, and local team; getting distracted by external industry networks or studying with outsiders doesn't change my daily performance.", "tag": "SO"},
+        {"id": "B", "text": "Expanding my professional circle by studying alongside engineers from other top companies in India, while tapping into the 17 internal RDC seniors already navigating this path to learn how they manage.", "tag": "GC"},
+        {"id": "C", "text": "Keeping my professional interactions strictly within my current region, as mixing with professionals from other sectors doesn't directly help me solve concrete plant issues.", "tag": "SQ"}
+      ]
+    },
+    {
+      "id": "q5",
+      "scenario": "When a new operational framework or testing methodology is introduced at the plant, what is your natural tendency?",
+      "options": [
+        {"id": "A", "text": "I look for ways to master the strategic logic behind the change, even if it means letting go of old, familiar floor habits and learning a completely new way of working.", "tag": "GC"},
+        {"id": "B", "text": "I prefer to stick to the proven, hands-on field methods I already know work well on the ground, rather than overcomplicating things with theoretical corporate models.", "tag": "SO"},
+        {"id": "C", "text": "I wait to see if the new methodology sticks around long-term before spending my energy trying to change how I operate daily.", "tag": "SQ"}
+      ]
+    },
+    {
+      "id": "q6",
+      "scenario": "As automation, predictive software, and digital data tracking increasingly enter our batching plants and QC labs, how do you see your role evolving?",
+      "options": [
+        {"id": "A", "text": "I believe my core value will always be manual, hands-on troubleshooting on the floor; data tools are just administrative extras that don't replace practical field experience.", "tag": "SO"},
+        {"id": "B", "text": "I see these changes as temporary tech trends; the foundational way we manage concrete operations and mix designs won’t fundamentally change over the next decade.", "tag": "SQ"},
+        {"id": "C", "text": "I want to master the data and technology behind these systems alongside my field experience, because the future belongs to managers who can bridge plant operations with digital tools.", "tag": "GC"}
+      ]
+    },
+    {
+      "id": "q7",
+      "scenario": "If you look at your peer group outside RDC who frequently switch jobs every 12 to 18 months for a minor salary bump, what is your view on their trajectory?",
+      "options": [
+        {"id": "A", "text": "I want to replicate that model; getting immediate incremental salary increases early in my career is more important than committing to one place for a higher qualification.", "tag": "SO"},
+        {"id": "B", "text": "I view frequent switching as a risky strategy that leaves you with fragmented experience; I would rather build deep roots in one solid ecosystem to secure a major managerial leap later.", "tag": "GC"},
+        {"id": "C", "text": "I think both paths lead to the exact same career level eventually, so it doesn't matter whether I switch jobs as a diploma holder or stay to get a BTech degree.", "tag": "SQ"}
+      ]
+    },
+    {
+      "id": "q8",
+      "scenario": "When your plant faces a sudden, high-pressure situation—such as an unexpected equipment breakdown or a critical QC deviation during peak hours—what is your typical response?",
+      "options": [
+        {"id": "A", "text": "I step forward to handle what I can immediately and collaborate with my team to keep things moving, even if it requires extra hours outside my scheduled shift.", "tag": "GC"},
+        {"id": "B", "text": "I focus strictly on my defined duties and wait for senior management or technical experts to provide specific instructions and resolve the bottleneck.", "tag": "SQ"},
+        {"id": "C", "text": "I document the problem carefully and flag it for the next shift to handle, ensuring I don’t make unauthorized mistakes under pressure.", "tag": "SO"}
+      ]
+    },
+    {
+      "id": "q9",
+      "scenario": "Where do you realistically see your career path stabilizing over the next 5 to 7 years within the RMC industry?",
+      "options": [
+        {"id": "A", "text": "I want to become an expert execution specialist on the ground, mastering daily plant floor or lab routines without the added stress of managing budgets, KPIs, and entire team operations.", "tag": "SO"},
+        {"id": "B", "text": "I see myself staying flexible, letting my career progress naturally based on whatever opportunities open up, rather than targeting a specific managerial rank right now.", "tag": "SQ"},
+        {"id": "C", "text": "I aim to transition into a Plant Manager, Technical Manager, or Business Manager role, taking full ownership of operational efficiency, cost management, and team leadership.", "tag": "GC"}
+      ]
+    },
+    {
+      "id": "q10",
+      "scenario": "When it comes to balancing professional upskilling with a demanding work schedule, which statement best matches your personal view?",
+      "options": [
+        {"id": "A", "text": "True career growth requires an individual to make personal sacrifices and invest their own personal time, even if the work environment is already high-pressure.", "tag": "GC"},
+        {"id": "B", "text": "An employer should structurally adjust workloads and shift targets first if they expect an employee to successfully take on higher academic commitments.", "tag": "SQ"},
+        {"id": "C", "text": "Upskilling should ideally happen through on-the-job training and daily practical experience rather than forcing formal academic programs into a busy routine.", "tag": "SO"}
+      ]
+    }
+  ]
+}
